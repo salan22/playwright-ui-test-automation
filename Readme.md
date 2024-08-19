@@ -1,32 +1,53 @@
-1. Install Node JS
+Project Setup Instructions
+1. Install Node.js
+Make sure you have Node.js installed on your system.
 
-2. Clone git project to your local
+2. Clone the Project
+Clone this Git repository to your local machine.
 
-3. Go to your project folder
+git clone https://github.com/salan22/Playwright-demo.git
 
-4. Install Playwright by running below command
+3. Navigate to Your Project Folder
+Change directory to the project folder:
+cd your-project
+
+5. Install Playwright
+Initialize Playwright by running the following command:
+
 npm init playwright@latest
-https://playwright.dev/docs/intro#installing-playwright
+For more information, visit the official Playwright documentation.
 
-5. Remember to choose Javascript
+Note: Make sure to select JavaScript during the setup process.
 
-6. Install DOTENV
+5. Install DOTENV
+To manage environment variables, install the dotenv package:
+
 npm install dotenv
 
-7. Create .env file in the root folder of your project with content
+6. Create a .env File
+(If .env doesn't exist). In the root folder of your project, create a .env file with the following content:
+
 STANDARD_USER=standard_user
 PASSWORD=secret_sauce
 BASE_URL=https://www.saucedemo.com
 
-8. Run all test
+7. Running Tests
+To execute all Playwright tests, use the following command:
+
 npx playwright test
 
-9. show report
-   npx playwright show-report
+8. View Test Reports
+To view the test report after execution, run:
 
-10 If you want to debug the test, can use VS Code + Playwright extension
+npx playwright show-report
 
-TEST STRUCTURE 
-spec file are located in tests folder, and the pages file are in pages subfolder
--- tests \
-----------pages \ 
+9. Debugging Tests
+If you want to debug your tests, you can use VS Code along with the Playwright extension.
+
+10. Project Structure
+Test Files: Located in the tests folder.
+Page Files: Located in the pages subfolder.
+
+Project folder structure:
+-- tests
+-- pages
