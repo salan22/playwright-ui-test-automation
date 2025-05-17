@@ -37,13 +37,11 @@ export const USERS = {
  * @returns {{username: string, password: string}} User credentials
  * @throws {Error} If user type is invalid
  */
-export function getUser(userType) {
-    const user = USERS[userType];
+export function getUser(type = process.env.USER_TYPE || 'standard') {
+    const user = USERS[type];
     if (!user) {
-        throw new Error(`Invalid user type: ${userType}. Available types: ${Object.keys(USERS).join(', ')}`);
+        throw new Error(`Invalid user type: ${type}`);
     }
-    return {
-        username: user.username,
-        password: user.password
-    };
+
+    return user;
 } 
