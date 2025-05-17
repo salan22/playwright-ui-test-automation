@@ -1,14 +1,9 @@
 import { test as base } from '@playwright/test';
-import { LoginPage } from './pages/LoginPage';
-import { MenuPage } from './pages/MenuPage';
-import { InventoryPage } from './pages/InventoryPage';
-import { CartPage } from './pages/CartPage';
-import { CheckOutPage } from './pages/CheckOutPage';
-
-import dotenv from 'dotenv';
-
-// Load environment variables from the .env file
-dotenv.config();
+import { LoginPage } from '../pages/LoginPage';
+import { MenuPage } from '../pages/MenuPage';
+import { InventoryPage } from '../pages/InventoryPage';
+import { CartPage } from '../pages/CartPage';
+import { CheckOutPage } from '../pages/CheckOutPage';
 
 export const test = base.extend({
     loginPage: async ({page}, use) => {                

@@ -2,16 +2,23 @@
   "name": "playwright-testing",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:dev": "ENV=development playwright test",
+    "test:staging": "ENV=staging playwright test",
+    "test:prod": "ENV=production playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Yen Dinh",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "@playwright/test": "^1.46.1",
-    "@types/node": "^22.4.0"
-  },
   "dependencies": {
+    "@playwright/test": "^1.46.1",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.4.0"
   }
 }

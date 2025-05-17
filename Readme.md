@@ -1,53 +1,93 @@
-Project Setup Instructions
-1. Install Node.js
-Make sure you have Node.js installed on your system.
+# Playwright UI Test Automation
 
-2. Clone the Project
-Clone this Git repository to your local machine.
+This project contains automated UI tests using Playwright for the Sauce Demo application.
 
-git clone https://github.com/salan22/Playwright-demo.git
+## Prerequisites
 
-3. Navigate to Your Project Folder
-Change directory to the project folder:
-cd your-project
+- Node.js (v14 or higher) - [Download Node.js](https://nodejs.org/)
+- npm (comes with Node.js)
+- Git (for version control)
 
-5. Install Playwright
-Initialize Playwright by running the following command:
+## System Setup
 
-npm init playwright@latest
-For more information, visit the official Playwright documentation.
+1. Install Node.js:
+   - Visit [nodejs.org](https://nodejs.org/)
+   - Download and install the LTS (Long Term Support) version
+   - Verify installation:
+     ```bash
+     node --version
+     npm --version
+     ```
 
-Note: Make sure to select JavaScript during the setup process.
+2. Install Git:
+   - Visit [git-scm.com](https://git-scm.com/)
+   - Download and install for your operating system
+   - Verify installation:
+     ```bash
+     git --version
+     ```
 
-5. Install DOTENV
-To manage environment variables, install the dotenv package:
+## Project Setup
 
-npm install dotenv
+1. Install project dependencies:
+```bash
+npm install
+```
 
-6. Create a .env File
-(If .env doesn't exist). In the root folder of your project, create a .env file with the following content:
+2. Install Playwright browsers (required for test execution):
+```bash
+npx playwright install
+```
 
-STANDARD_USER=standard_user
-PASSWORD=secret_sauce
-BASE_URL=https://www.saucedemo.com
+3. Create environment files:
+```bash
+# Copy example environment file
+cp .env.example .env.development
+```
 
-7. Running Tests
-To execute all Playwright tests, use the following command:
+## Running Tests
 
-npx playwright test
+Run tests in different environments:
 
-8. View Test Reports
-To view the test report after execution, run:
+```bash
+# Development environment (default)
+npm run test
 
-npx playwright show-report
+# Development environment with UI mode
+npm run test:ui
 
-9. Debugging Tests
-If you want to debug your tests, you can use VS Code along with the Playwright extension.
+# Development environment with debug mode
+npm run test:debug
 
-10. Project Structure
-Test Files: Located in the tests folder.
-Page Files: Located in the pages subfolder.
+# Staging environment
+npm run test:staging
 
-Project folder structure:
--- tests
--- pages
+# Production environment
+npm run test:prod
+```
+
+## Environment Configuration
+
+The project uses different environment files for different contexts:
+- `.env.development` - Development environment
+- `.env.staging` - Staging environment
+- `.env.production` - Production environment
+
+Copy `.env.example` to create your environment files and update the values as needed.
+
+## Project Structure
+
+```
+├── tests/              # Test files
+├── pages/             # Page Object Models
+├── .env.example       # Example environment configuration
+└── playwright.config.js # Playwright configuration
+```
+
+## Available Scripts
+
+- `npm run test` - Run tests in development environment
+- `npm run test:ui` - Run tests with Playwright UI mode
+- `npm run test:debug` - Run tests in debug mode
+- `npm run test:staging` - Run tests in staging environment
+- `npm run test:prod` - Run tests in production environment
